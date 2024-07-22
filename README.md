@@ -1,6 +1,6 @@
 # Angular App Template
 
-This repo contains an Angular project with everything you need to start developing an new web app.
+This repo contains an Angular project with everything you need to start developing a new web app.
 
 ## Staks
 
@@ -20,7 +20,11 @@ This repo contains an Angular project with everything you need to start developi
 - [Angular CDK](https://material.angular.io/cdk/categories) already installed.
 - Possibility to set different `title` and `description` per page.
 - [`sitemap`](https://www.npmjs.com/package/sitemap) and [`apicache`](https://www.npmjs.com/package/apicache) to serve `robots.txt` and `sitemap.xml`.
-- `dockerfile` to build a Docker Image.
-- `provideHttpClient(withFetch())` already setted.
+- `Dockerfile` to build a Docker Image.
+- `provideHttpClient(withFetch())` already set.
 
 ## Setup the project
+
+- change project name
+- setup server.ts
+- change project name in Dockerfile

@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "externalDependencies": ["sitemap", "apicache"],
             "outputPath": "dist/angular-app-template",
             "index": "src/index.html",
             "browser": "src/main.ts",
