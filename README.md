@@ -14,12 +14,12 @@ Check out [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-templa
 ## Features
 
 - Angular with SSR.
-- TailwindCSS already installed.
+- TailwindCSS.
 - `components` folder.
 - `components/UI` folder.
 - `components/pages` folder with `HomePageComponent` and `Page404Component`.
 - `<router-outlet></router-outlet>` in `app.component.html`.
-- [Angular CDK](https://material.angular.io/cdk/categories) already installed.
+- [Angular CDK](https://material.angular.io/cdk/categories).
 - Possibility to set different `title` and `description` per page.
 - [`sitemap`](https://www.npmjs.com/package/sitemap) and [`apicache`](https://www.npmjs.com/package/apicache) to serve `robots.txt` and `sitemap.xml`.
 - `Dockerfile` to build a Docker Image.
@@ -35,7 +35,7 @@ Check out [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-templa
     - run `git init`.
 3. Rename the project.
     - rename the project folder.
-    - find all occurrences of `angular-app-template` in the project and replace it with you new app name.
+    - find all occurrences of `angular-app-template` in the project and replace it with your new app name.
 4. Customize routes in `app.routes.ts`.
 5. Setup `server.ts` following the TODOs.
     - you have to set the content of the `robots.txt` and the list of pages for the `sitemap.xml`.
