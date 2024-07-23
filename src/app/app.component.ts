@@ -13,8 +13,6 @@ import {filter, map, mergeMap, tap} from "rxjs";
 })
 export class AppComponent implements OnInit {
 
-  title = 'angular-app-template';
-
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
               private meta: Meta) {
