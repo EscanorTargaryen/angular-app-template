@@ -4,10 +4,12 @@ This repo contains an Angular project with everything you need to start developi
 
 ## Staks
 
-- Angular SSR v18.1.1
-- TailwindCSS v3.4.6
-- Node.js (check [Angular version compatibility](https://angular.dev/reference/versions))
-- TypeScript (check [Angular version compatibility](https://angular.dev/reference/versions))
+- Angular SSR
+- TailwindCSS
+- Node.js 
+- TypeScript
+
+Check out [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-template/tags) to see the versions of Angular supported by this project.
 
 ## Features
 
@@ -27,13 +29,17 @@ This repo contains an Angular project with everything you need to start developi
 ## Setup the project
 
 1. Clone the repository (from [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-template/tags) you can choose the Angular version).
-2. Rename the project.
+2. Move the repository to new git repository.
+    - `cd` to repo folder. 
+    - remove .git (hidden) folder. 
+    - run `git init`.
+3. Rename the project.
     - rename the project folder.
     - find all occurrences of `angular-app-template` in the project and replace it with you new app name.
-3. Customize routes in `app.routes.ts`.
-4. Setup `server.ts` following the TODOs.
+4. Customize routes in `app.routes.ts`.
+5. Setup `server.ts` following the TODOs.
     - you have to set the content of the `robots.txt` and the list of pages for the `sitemap.xml`.
-5. Rename path in Dockerfile.
+6. Rename path in Dockerfile.
     - last line replace `project-name` with your project name.
 
 ## Serve the app with Docker
@@ -41,3 +47,7 @@ This repo contains an Angular project with everything you need to start developi
 - `cd` to app folder.
 - run `sudo docker build . -t app-name -f Dockerfile` to build an Image of the project.
 - run `sudo docker run -d -p 4000:4000 --restart unless-stopped --name app-name app-name` to create a new container from the Image.
+
+## Contributing
+
+Feel free to open issues or pull requests to discuss improvements and other features.
