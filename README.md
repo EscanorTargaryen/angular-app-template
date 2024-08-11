@@ -2,7 +2,7 @@
 
 This repo contains an Angular project with everything you need to start developing a new web app.
 
-## Staks
+## Stacks
 
 - Angular SSR
 - TailwindCSS
