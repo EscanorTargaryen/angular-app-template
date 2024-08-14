@@ -13,7 +13,7 @@ Check out [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-templa
 
 ## Features
 
-- Angular with SSR.
+- Angular with SSR ([A complete guide to SSR](https://www.angulararchitects.io/blog/complete-guide-for-server-side-rendering-ssr-in-angular/)).
 - TailwindCSS.
 - `components` folder.
 - `components/UI` folder.
@@ -25,7 +25,9 @@ Check out [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-templa
 - `Dockerfile` to build a Docker Image.
 - `provideHttpClient(withFetch())` already set.
   - From angular.dev: `It's strongly recommended to enable fetch for applications that use Server-Side Rendering for better performance and compatibility.`
-
+- Hydration already set with:
+  - [`EventReplay`](https://angular.dev/api/platform-browser/withEventReplay)
+  - custom [`HttpTransferCacheOptions`](https://angular.dev/api/platform-browser/withHttpTransferCacheOptions).
 ## Setup the project
 
 1. Clone the repository (from [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-template/tags) you can choose the Angular version).
@@ -36,11 +38,14 @@ Check out [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-templa
 3. Rename the project.
     - rename the project folder.
     - find all occurrences of `angular-app-template` in the project and replace it with your new app name.
-4. Customize routes in `app.routes.ts`.
-5. Setup `server.ts` following the TODOs.
-    - you have to set the content of the `robots.txt` and the list of pages for the `sitemap.xml`.
-6. Rename path in Dockerfile.
+4. Rename path in Dockerfile.
     - last line replace `project-name` with your project name.
+
+#### During development:
+- Customize routes in `app.routes.ts`. 
+- Setup `server.ts` following the TODOs.
+  - you have to set the content of the `robots.txt` and the list of pages for the `sitemap.xml`.
+- Customize HTTP request cache system in `app.config.ts`.
 
 ## Serve the app with Docker
 
