@@ -44,7 +44,8 @@ Check out [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-templa
 #### During development:
 - Customize routes in `app.routes.ts`. 
 - Setup `server.ts` following the TODOs.
-  - you have to set the content of the `robots.txt` and the list of pages for the `sitemap.xml`.
+  - set the content of `robots.txt`
+  - static routes are automatically added to the `sitemap.xml` (it's your task to manage the dynamic ones).
 - Customize HTTP request cache system in `app.config.ts`.
 
 ## Serve the app with Docker
