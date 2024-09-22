@@ -1,10 +1,12 @@
-import { APP_BASE_HREF } from '@angular/common';
-import { CommonEngine } from '@angular/ssr';
+import {APP_BASE_HREF} from '@angular/common';
+import {CommonEngine} from '@angular/ssr';
 import express from 'express';
-import { fileURLToPath } from 'node:url';
-import { dirname, join, resolve } from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {dirname, join, resolve} from 'node:path';
 import bootstrap from './src/main.server';
 import {SitemapStream} from "sitemap";
+import {routes} from "./src/app/app.routes";
+import {Routes} from "@angular/router";
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -26,14 +28,13 @@ export function app(): express.Express {
     index: 'index.html',
   }));
 
-
   //SEO optimization robots
 
   //TODO replace with false for deployment.
   let developmentServer = true
 
   //TODO replace with your domain.
-  let hostName =  developmentServer ? "http://localhost" :"https://domain.my"
+  let hostName = developmentServer ? "http://localhost" : "https://domain.my"
 
   //TODO configure with your Robots.txt content.
   const indexableRobotsContent = developmentServer ?
@@ -52,8 +53,6 @@ Disallow: /assets/`;
     res.send(indexableRobotsContent);
   });
 
-
-
   //SEO optimization sitemap
 
   var apicache = require('apicache')
@@ -67,10 +66,43 @@ Disallow: /assets/`;
 
       (async () => {
 
-        //TODO list all of pages for sitemap generation
-        const routes = [''];
+        const getPaths = (routes: Routes): string[] => {
+          let paths: string[] = [];
 
-        for (const route of routes) {
+          for (const route of routes) {
+
+            if (route.path !== "**") {
+
+              if (route.path !== undefined) {
+                paths.push(route.path);
+              }
+
+              let ch = [{ch: route.children, parent: route.path}]
+
+              while (ch && ch.length > 0) {
+
+                let tmp = [];
+                for (let r of ch) {
+                  if (r.ch)
+                    for (let s of r.ch) {
+                      paths.push(`${r.parent}/${s.path}`);
+
+                      if (s.children) {
+                          tmp.push({ch: s.children, parent: `${r.parent}/${s.path}`});
+                      }
+                    }
+                }
+                ch = tmp;
+              }
+            }
+          }
+
+          return paths;
+        };
+
+        const routeS = getPaths(routes);
+
+        for (const route of routeS) {
           smStream.write(route);
         }
 
@@ -86,11 +118,9 @@ Disallow: /assets/`;
     }
   });
 
-
-
   // All regular routes use the Angular engine
   server.get('**', (req, res, next) => {
-    const { protocol, originalUrl, baseUrl, headers } = req;
+    const {protocol, originalUrl, baseUrl, headers} = req;
 
     commonEngine
       .render({
@@ -98,7 +128,7 @@ Disallow: /assets/`;
         documentFilePath: indexHtml,
         url: `${protocol}://${headers.host}${originalUrl}`,
         publicPath: browserDistFolder,
-        providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
+        providers: [{provide: APP_BASE_HREF, useValue: baseUrl}],
       })
       .then((html) => res.send(html))
       .catch((err) => next(err));
