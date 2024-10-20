@@ -28,6 +28,7 @@ Check out [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-templa
 - Hydration already set with:
   - [`EventReplay`](https://angular.dev/api/platform-browser/withEventReplay)
   - custom [`HttpTransferCacheOptions`](https://angular.dev/api/platform-browser/withHttpTransferCacheOptions).
+- Shell script `development.sh` to reload the docker container.
 ## Setup the project
 
 1. Clone the repository (from [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-template/tags) you can choose the Angular version).
@@ -40,6 +41,7 @@ Check out [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-templa
     - find all occurrences of `angular-app-template` in the project and replace it with your new app name.
 4. Rename path in Dockerfile.
     - last line replace `project-name` with your project name.
+5. Set parameters in `development.sh`.
 
 #### During development:
 - Customize routes in `app.routes.ts`. 
@@ -50,9 +52,7 @@ Check out [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-templa
 
 ## Serve the app with Docker
 
-- `cd` to app folder.
-- run `sudo docker build . -t app-name -f Dockerfile` to build an Image of the project.
-- run `sudo docker run -d -p 4000:4000 --restart unless-stopped --name app-name app-name` to create a new container from the Image.
+- run `development.sh`.
 
 ## Contributing
 
