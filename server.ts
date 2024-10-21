@@ -31,7 +31,7 @@ export function app(): express.Express {
   //SEO optimization robots
 
   //TODO replace with false for deployment.
-  let developmentServer = true
+  let developmentServer = process.env['DEVELOPMENT_SERVER'] === "true"
 
   //TODO replace with your domain.
   let hostName = developmentServer ? "http://localhost" : "https://domain.my"

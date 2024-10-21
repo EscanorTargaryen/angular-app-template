@@ -4,6 +4,7 @@ import {ActivatedRoute, Data, NavigationEnd, Router, RouterOutlet} from '@angula
 import {Meta} from "@angular/platform-browser";
 import {filter, map, mergeMap, tap} from "rxjs";
 import {isPlatformServer} from "@angular/common";
+import {EnvService} from "./services/env/env.service";
 
 @Component({
   selector: 'app-root',
@@ -14,9 +15,12 @@ import {isPlatformServer} from "@angular/common";
 })
 export class AppComponent {
 
-  constructor(private router: Router,
-              private activatedRoute: ActivatedRoute,
-              private meta: Meta) {
+  router= inject(Router);
+  activatedRoute= inject(ActivatedRoute);
+  meta= inject(Meta);
+  env= inject(EnvService);
+
+  constructor() {
 
     const platformId = inject(PLATFORM_ID);
     const isServer: boolean = isPlatformServer(platformId);
