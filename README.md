@@ -46,7 +46,7 @@ Check out the [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-te
 4. Rename path in Dockerfile.
     - in the last line, replace `project-name` with your project name.
 5. Set parameters in `development.sh`.
-6. Add `.enn` to `.gitignore`.
+6. Add `.env` to `.gitignore`.
 
 #### During development:
 - Customize routes in `app.routes.ts`. 
