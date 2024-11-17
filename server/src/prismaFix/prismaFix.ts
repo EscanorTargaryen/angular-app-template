@@ -1,3 +1,4 @@
+//fix from https://github.com/prisma/prisma/issues/5030
 import type {PrismaClient as PrismaClientType} from '@prisma/client';
 import {createRequire} from 'module';
 
