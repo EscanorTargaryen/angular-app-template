@@ -1,6 +1,9 @@
 import {Router} from 'express';
+import {PrismaClient} from './prismaFix/prismaFix';
 
 const router = Router();
+
+export const prisma = new PrismaClient()
 
 /*
 Link another router
