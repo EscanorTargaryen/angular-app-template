@@ -9,6 +9,11 @@ This repo contains an Angular project with everything you need to start developi
 - Node.js 
 - TypeScript
 
+**Needs Prisma in Angular SSR?** Check out the `prisma` branch and its [README.md](https://github.com/EscanorTargaryen/angular-app-template/tree/prisma)
+
+<br>
+
+
 Check out the [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-template/tags) to see which Angular versions are supported by this project.
 
 ## Features
