@@ -3,10 +3,11 @@ import {CommonEngine} from '@angular/ssr';
 import express from 'express';
 import {fileURLToPath} from 'node:url';
 import {dirname, join, resolve} from 'node:path';
-import bootstrap from './src/main.server';
+import bootstrap from '../../src/main.server';
 import {SitemapStream} from "sitemap";
-import {routes} from "./src/app/app.routes";
+import {routes} from "../../src/app/app.routes";
 import {Routes} from "@angular/router";
+import apiRouter from "./apiRouter";
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -117,6 +118,9 @@ Disallow: /assets/`;
       res.status(500).end();
     }
   });
+
+  server.use(express.json());
+  server.use('/api/v1', apiRouter);
 
   // All regular routes use the Angular engine
   server.get('**', (req, res, next) => {
