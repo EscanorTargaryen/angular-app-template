@@ -6,7 +6,7 @@ This repo contains an Angular project with everything you need to start developi
 
 - Angular SSR
 - TailwindCSS
-- Node.js 
+- Node.js & Prisma
 - TypeScript
 
 Check out the [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-template/tags) to see which Angular versions are supported by this project.
@@ -32,6 +32,7 @@ Check out the [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-te
   - custom [`HttpTransferCacheOptions`](https://angular.dev/api/platform-browser/withHttpTransferCacheOptions).
 - Shell script `development.sh` to reload the docker container.
 - Unified `.env` file for both frontend and backend ([Read more](https://medium.com/@iyieldinov/angular-17-ssr-leveraging-transferstate-for-server-side-environment-variables-or-other-external-2fcb6adbdd06)).
+- Ready to use `Prisma` with `Node.js` database ORM and backend.
 
 ## Setup the project
 
@@ -58,6 +59,8 @@ Check out the [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-te
   - Add a new variable into `.env`.
   - Pass it into TransferState in `app.config.server.ts`.
   - Retrieve it from TransferState into `env.service.ts`.
+- Configure your db in `prisma/schema.prisma` and the database link in `.env`.
+- Configure your endpoints in `server/src`.
 
 ## Serve the app with Docker
 
