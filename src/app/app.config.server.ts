@@ -20,7 +20,7 @@ export function transferStateFactory(transferState: TransferState) {
       //ATTENTION! Use ternary operator to check if the environment variable is defined, otherwise it will be set to 'undefined' and the app will not load.
       //(The problem may occur if the .env is not found)
       ATTRIBUTE_ONE: process.env['ATTRIBUTE_ONE'] ? process.env['ATTRIBUTE_ONE'] : '',
-      ATTRIBUTE_TWO: process.env['ATTRIBUTE_TWO'] ? process.env['ATTRIBUTE_ONE'] : '',
+      ATTRIBUTE_TWO: process.env['ATTRIBUTE_TWO'] ? process.env['ATTRIBUTE_TWO'] : '',
       //TODO Add more environment variables as needed
     };
     transferState.set<any>(envStateKey, envVars);
