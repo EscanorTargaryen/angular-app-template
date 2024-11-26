@@ -2,6 +2,8 @@ import {APP_INITIALIZER, ApplicationConfig, makeStateKey, mergeApplicationConfig
 import {provideServerRendering} from '@angular/platform-server';
 import {appConfig} from './app.config';
 import * as dotenv from 'dotenv';
+import {serverRoutes} from "./app.routes.server";
+import {provideServerRoutesConfig} from "@angular/ssr";
 
 // Load environment variables
 dotenv.config();
@@ -36,6 +38,7 @@ const serverConfig: ApplicationConfig = {
       deps: [TransferState],
       multi: true,
     },
+    provideServerRoutesConfig(serverRoutes),
   ]
 };
 
