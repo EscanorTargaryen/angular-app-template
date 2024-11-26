@@ -35,6 +35,7 @@ Check out the [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-te
 - Hydration already configured with:
   - [`EventReplay`](https://angular.dev/api/platform-browser/withEventReplay)
   - custom [`HttpTransferCacheOptions`](https://angular.dev/api/platform-browser/withHttpTransferCacheOptions).
+- [`Hybrid rendering`](https://angular.dev/guide/hybrid-rendering) ready to use.
 - Shell script `development.sh` to reload the docker container.
 - Unified `.env` file for both frontend and backend ([Read more](https://medium.com/@iyieldinov/angular-17-ssr-leveraging-transferstate-for-server-side-environment-variables-or-other-external-2fcb6adbdd06)).
 
@@ -63,6 +64,7 @@ Check out the [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-te
   - Add a new variable into `.env`.
   - Pass it into TransferState in `app.config.server.ts`.
   - Retrieve it from TransferState into `env.service.ts`.
+- Choose the rendering mode for each page in `app.routes.server.ts`.
 
 ## Serve the app with Docker
 
