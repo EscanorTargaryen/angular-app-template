@@ -38,6 +38,7 @@ export function app(): express.Express {
   let hostName = developmentServer ? "http://localhost" : "https://domain.my"
 
   //TODO configure with your Robots.txt content.
+  //The robots.txt file could also be hosted statically by placing it directly in the public folder. If you still prefer to have two different robots.txt files for the deployment and non-deployment phases, you can ignore this message.
   const indexableRobotsContent = developmentServer ?
     `User-agent: *
 Disallow: /` :
@@ -89,7 +90,7 @@ Disallow: /assets/`;
                       paths.push(`${r.parent}/${s.path}`);
 
                       if (s.children) {
-                          tmp.push({ch: s.children, parent: `${r.parent}/${s.path}`});
+                        tmp.push({ch: s.children, parent: `${r.parent}/${s.path}`});
                       }
                     }
                 }
