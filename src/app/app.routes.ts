@@ -1,13 +1,13 @@
-import { Routes } from '@angular/router';
-import {HomePageComponent} from "./components/pages/home-page/home-page.component";
-import {Page404Component} from "./components/pages/page404/page404.component";
+import {Routes} from '@angular/router';
+import {HomePage} from "./components/pages/home.page/home.page";
+import {NotfoundPage} from "./components/pages/notfound.page/notfound.page";
 
 export const routes: Routes = [
   {
     path: '',
-    component: HomePageComponent,
+    component: HomePage,
     title: "HomePage",
     data: {description: "A simple homepage"}
   },
-  {path: '**', component: Page404Component, title: "Page not found",},
+  {path: '**', component: NotfoundPage, title: "Page not found",},
 ];

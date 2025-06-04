@@ -1,3 +1,4 @@
+import { provideServerRendering, withRoutes } from '@angular/ssr';
 import {
   APP_INITIALIZER,
   ApplicationConfig, inject,
@@ -6,11 +7,9 @@ import {
   provideAppInitializer,
   TransferState
 } from '@angular/core';
-import {provideServerRendering} from '@angular/platform-server';
 import {appConfig} from './app.config';
 import * as dotenv from 'dotenv';
 import {serverRoutes} from "./app.routes.server";
-import {provideServerRouting} from "@angular/ssr";
 
 // Load environment variables
 dotenv.config();
@@ -37,14 +36,10 @@ export function transferStateFactory(transferState: TransferState) {
 }
 
 const serverConfig: ApplicationConfig = {
-  providers: [
-    provideServerRendering(),
-    provideAppInitializer(() => {
+  providers: [provideAppInitializer(() => {
       const transferState = inject(TransferState);
       return transferStateFactory(transferState)();
-    }),
-    provideServerRouting(serverRoutes),
-  ]
+    }), provideServerRendering(withRoutes(serverRoutes))]
 };
 
 export const config = mergeApplicationConfig(appConfig, serverConfig);
