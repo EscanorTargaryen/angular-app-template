@@ -34,6 +34,8 @@ Check out the [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-te
 - Shell script `development.sh` to reload the docker container.
 - Unified `.env` file for both frontend and backend ([Read more](https://medium.com/@iyieldinov/angular-17-ssr-leveraging-transferstate-for-server-side-environment-variables-or-other-external-2fcb6adbdd06)).
 - Ready to use `Prisma` with `Node.js` database ORM and backend.
+- Zoneless change detection ([Read more](https://angular.dev/guide/zoneless))
+
 
 ## Setup the project
 
