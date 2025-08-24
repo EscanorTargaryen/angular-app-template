@@ -38,6 +38,7 @@ Check out the [`GitHub tags`](https://github.com/EscanorTargaryen/angular-app-te
 - [`Hybrid rendering`](https://angular.dev/guide/hybrid-rendering) ready to use.
 - Shell script `development.sh` to reload the docker container.
 - Unified `.env` file for both frontend and backend ([Read more](https://medium.com/@iyieldinov/angular-17-ssr-leveraging-transferstate-for-server-side-environment-variables-or-other-external-2fcb6adbdd06)).
+- Zoneless change detection ([Read more](https://angular.dev/guide/zoneless))
 
 ## Setup the project
 
