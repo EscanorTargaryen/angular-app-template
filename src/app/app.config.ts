@@ -6,7 +6,7 @@ import {provideClientHydration, withEventReplay, withHttpTransferCacheOptions} f
 import {HttpRequest, provideHttpClient, withFetch} from "@angular/common/http";
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({eventCoalescing: true}), provideRouter(routes), provideClientHydration(
+  providers: [provideRouter(routes), provideClientHydration(
     withEventReplay(),
     withHttpTransferCacheOptions({
       filter: (req: HttpRequest<unknown>) => false, // to filter. "false" no cache else cache
